@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Javeda Soaps | Natural Handmade Soaps</title>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #fffaf4;
+    color: #333;
+}
+header {
+    background: #7b4b2a;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+header p {
+    font-size: 16px;
+}
+nav {
+    background: #4f2f1d;
+    text-align: center;
+    padding: 12px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+}
+.hero {
+    text-align: center;
+    padding: 35px 15px;
+    background: #f3dfc8;
+}
+.hero h2 {
+    font-size: 28px;
+    color: #5b321d;
+    margin-bottom: 10px;
+}
+.hero p {
+    font-size: 17px;
+}
+.products {
+    padding: 30px 15px;
+    max-width: 1000px;
+    margin: auto;
+}
+.products h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #5b321d;
+}
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+.product {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.product img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: #eee;
+}
+.product h3 {
+    margin: 15px 0 8px;
+    color: #5b321d;
+}
+.price {
+    font-size: 21px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.product button,
+.checkout button {
+    border: none;
+    background: #7b4b2a;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.product button:hover,
+.checkout button:hover {
+    background: #5b321d;
+}
+.cart {
+    background: #f3dfc8;
+    padding: 30px 15px;
+}
+.cart-inner {
+    max-width: 700px;
+    margin: auto;
+}
+.cart h2 {
+    text-align: center;
+    color: #5b321d;
+    margin-bottom: 20px;
+}
+#cartItems {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+    gap: 10px;
+}
+.quantity button {
+    padding: 5px 10px;
+    margin: 0 3px;
+    border: none;
+    border-radius: 5px;
+    background: #7b4b2a;
+    color: white;
+}
+.total {
+    text-align: right;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+.checkout {
+    max-width: 700px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.checkout h2 {
+    text-align: center;
+    color: #5b321d;
+    margin-bottom: 20px;
+}
+.checkout input,
+.checkout textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.checkout textarea {
+    height: 90px;
+    resize: none;
+}
+.payment {
+    background: #f3dfc8;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.payment h3 {
+    margin-bottom: 8px;
+}
+.whatsapp {
+    background: #25D366 !important;
+    margin-top: 10px;
+}
+.whatsapp:hover {
+    background: #128C7E !important;
+}
+footer {
+    background: #4f2f1d;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 30px;
+}
+footer a {
+    color: white;
+}
+@media(max-width:600px) {
+    header h1 {
+        font-size: 27px;
+    }
+    .hero h2 {
+        font-size: 23px;
+    }
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+    <h1>🧼 Javeda Soaps</h1>
+    <p>Natural Care • Freshness • Fragrance</p>
+</header>
+<nav>
+    <a href="#products">Products</a>
+    <a href="#cart">Cart</a>
+    <a href="#checkout">Order</a>
+</nav>
+<section class="hero">
+    <h2>Welcome to Javeda Soaps</h2>
+    <p>Beautiful soaps made for your everyday care.</p>
+</section>
+<section class="products" id="products">
+    <h2>Our Products</h2>
+    <div class="product-container">
+        <div class="product">
+            <img src="https://via.placeholder.com/400x300?text=Coffee+Soap"
+                 alt="Coffee Soap">
+            <h3>Coffee Soap</h3>
+            <p>Refreshing coffee soap for a fresh bathing experience.</p>
+            <div class="price">₹150</div>
+            <button onclick="addToCart('Coffee Soap',150)">
+                Add to Cart
+            </button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/400x300?text=Manjusha+Soap"
+                 alt="Manjusha Soap">
+            <h3>Manjusha Soap</h3>
+            <p>Gentle and refreshing soap for everyday use.</p>
+            <div class="price">₹180</div>
+            <button onclick="addToCart('Manjusha Soap',180)">
+                Add to Cart
+            </button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/400x300?text=Marry+Gold+Soap"
+                 alt="Marry Gold Soap">
+            <h3>Marry Gold Soap</h3>
+            <p>Fresh fragrance and pleasant bathing experience.</p>
+            <div class="price">₹200</div>
+            <button onclick="addToCart('Marry Gold Soap',200)">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</section>
+<section class="cart" id="cart">
+    <div class="cart-inner">
+        <h2>🛒 Your Cart</h2>
+        <div id="cartItems">
+            Your cart is empty.
+        </div>
+        <div class="total">
+            Total: ₹<span id="total">0</span>
+        </div>
+    </div>
+</section>
+<section class="checkout" id="checkout">
+    <h2>📦 Checkout</h2>
+    <input type="text"
+           id="customerName"
+           placeholder="Your Name">
+    <input type="tel"
+           id="customerPhone"
+           placeholder="Mobile Number">
+    <textarea id="customerAddress"
+              placeholder="Delivery Address"></textarea>
+    <div class="payment">
+        <h3>💳 Payment</h3>
+        <p>
+            You can pay using UPI after placing the order.
+        </p>
+        <p>
+            UPI ID:
+            <strong>YOURUPI@upi</strong>
+        </p>
+    </div>
+    <button onclick="placeOrder()">
+        Place Order
+    </button>
+    <br><br>
+    <button class="whatsapp"
+            onclick="sendWhatsApp()">
+        📱 Order Through WhatsApp
+    </button>
+</section>
+<footer>
+    <h3>Javeda Soaps</h3>
+    <p>For orders and enquiries:</p>
+    <p>📞 9742709272</p>
+    <p>
+        © 2026 Javeda Soaps. All Rights Reserved.
+    </p>
+</footer>
+<script>
+let cart = [];
+/* ADD PRODUCT TO CART */
+function addToCart(name, price) {
+    let existing = cart.find(item => item.name === name);
+    if(existing) {
+        existing.quantity++;
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+        });
+    }
+    displayCart();
+    alert(name + " added to cart!");
+}
+/* DISPLAY CART */
+function displayCart() {
+    let cartItems = document.getElementById("cartItems");
+    let total = 0;
+    if(cart.length === 0) {
+        cartItems.innerHTML = "Your cart is empty.";
+        document.getElementById("total").innerText = "0";
+        return;
+    }
+    cartItems.innerHTML = "";
+    cart.forEach((item,index) => {
+        let itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        cartItems.innerHTML += `
+            <div class="cart-item">
+                <div>
+                    <strong>${item.name}</strong>
+                    <br>
+                    ₹${item.price} × ${item.quantity}
+                    <br>
+                    <strong>₹${itemTotal}</strong>
+                </div>
+                <div class="quantity">
+                    <button onclick="decrease(${index})">
+                        -
+                    </button>
+                    ${item.quantity}
+                    <button onclick="increase(${index})">
+                        +
+                    </button>
+                    <button onclick="removeItem(${index})">
+                        Remove
+                    </button>
+                </div>
+            </div>
+        `;
+    });
+    document.getElementById("total").innerText = total;
+}
+/* INCREASE */
+function increase(index) {
+    cart[index].quantity++;
+    displayCart();
+}
+/* DECREASE */
+function decrease(index) {
+    if(cart[index].quantity > 1) {
+        cart[index].quantity--;
+    } else {
+        cart.splice(index,1);
+    }
+    displayCart();
+}
+/* REMOVE */
+function removeItem(index) {
+    cart.splice(index,1);
+    displayCart();
+}
+/* PLACE ORDER */
+function placeOrder() {
+    if(cart.length === 0) {
+        alert("Please add a product to your cart.");
+        return;
+    }
+    let name =
+        document.getElementById("customerName").value;
+    let phone =
+        document.getElementById("customerPhone").value;
+    let address =
+        document.getElementById("customerAddress").value;
+    if(name === "" || phone === "" || address === "") {
+        alert("Please enter your name, phone number and address.");
+        return;
+    }
+    let total = 0;
+    cart.forEach(item => {
+        total += item.price * item.quantity;
+    });
+    alert(
+        "Order received successfully!\n\n" +
+        "Customer: " + name +
+        "\nTotal: ₹" + total +
+        "\n\nPlease complete your UPI payment."
+    );
+    /* OPEN UPI PAYMENT */
+    let upiID = "YOURUPI@upi";
+    let upiURL =
+        "upi://pay?pa=" +
+        upiID +
+        "&pn=Javeda%20Soaps" +
+        "&am=" +
+        total +
+        "&cu=INR";
+    window.location.href = upiURL;
+}
+/* WHATSAPP ORDER */
+function sendWhatsApp() {
+    if(cart.length === 0) {
+        alert("Please add a product first.");
+        return;
+    }
+    let name =
+        document.getElementById("customerName").value;
+    let phone =
+        document.getElementById("customerPhone").value;
+    let address =
+        document.getElementById("customerAddress").value;
+    if(name === "" || phone === "" || address === "") {
+        alert("Please enter your name, phone number and address.");
+        return;
+    }
+    let message =
+        "🧼 *Javeda Soaps Order*%0A%0A";
+    message +=
+        "*Customer:* " + name + "%0A";
+    message +=
+        "*Phone:* " + phone + "%0A";
+    message +=
+        "*Address:* " + address + "%0A%0A";
+    message += "*Order Details:*%0A";
+    let total = 0;
+    cart.forEach(item => {
+        let itemTotal =
+            item.price * item.quantity;
+        total += itemTotal;
+        message +=
+            item.name +
+            " × " +
+            item.quantity +
+            " = ₹" +
+            itemTotal +
+            "%0A";
+    });
+    message +=
+        "%0A*Total: ₹" + total + "*";
+    let whatsappNumber = "919742709272";
+    let url =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        message;
+    window.open(url, "_blank");
+}
+</script>
+</body>
+</html>
