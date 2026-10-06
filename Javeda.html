@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Javeda Soaps | Natural Handmade Soaps</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fffaf5;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background: #6b3e26;
+            color: white;
+            padding: 18px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 30px;
+        }
+
+        header p {
+            margin-top: 5px;
+            font-size: 15px;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(
+                rgba(107, 62, 38, 0.75),
+                rgba(107, 62, 38, 0.75)
+            ),
+            url("https://images.unsplash.com/photo-1607006344380-b6775a0824d7?auto=format&fit=crop&w=1200&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .shop-btn {
+            display: inline-block;
+            background: #f4b942;
+            color: #3d2518;
+            padding: 13px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* PRODUCTS */
+        .products-section {
+            padding: 45px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #6b3e26;
+            font-size: 30px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .product img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .product h3 {
+            margin: 15px 5px 8px;
+            color: #6b3e26;
+        }
+
+        .product p {
+            color: #666;
+            padding: 0 15px;
+            min-height: 40px;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #c47b22;
+            margin: 12px 0;
+        }
+
+        .add-btn {
+            background: #6b3e26;
+            color: white;
+            border: none;
+            padding: 11px 22px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .add-btn:hover {
+            background: #4d2c1c;
+        }
+
+        /* CART */
+        .cart-section {
+            background: #f4eadf;
+            padding: 40px 20px;
+        }
+
+        .cart {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .cart h2 {
+            text-align: center;
+            color: #6b3e26;
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 12px 0;
+            gap: 10px;
+        }
+
+        .quantity button {
+            border: none;
+            background: #6b3e26;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .quantity span {
+            margin: 0 10px;
+        }
+
+        .remove-btn {
+            background: #d9534f;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .total {
+            text-align: right;
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #6b3e26;
+        }
+
+        /* CUSTOMER FORM */
+        .checkout {
+            margin-top: 25px;
+        }
+
+        .checkout h3 {
+            color: #6b3e26;
+            margin-bottom: 15px;
+        }
+
+        .checkout input,
+        .checkout textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .checkout textarea {
+            height: 90px;
+            resize: none;
+        }
+
+        .whatsapp-btn {
+            width: 100%;
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* ABOUT */
+        .about {
+            padding: 50px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .about h2 {
+            color: #6b3e26;
+            margin-bottom: 15px;
+        }
+
+        .about p {
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #6b3e26;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            .cart-item {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+    <h1>🧼 Javeda Soaps</h1>
+    <p>Natural • Handmade • Refreshing</p>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h2>Feel Fresh. Feel Natural.</h2>
+
+    <p>
+        Discover our beautiful collection of handmade soaps.
+    </p>
+
+    <a href="#products" class="shop-btn">
+        Shop Now
+    </a>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section class="products-section" id="products">
+
+    <h2 class="section-title">
+        Our Soaps
+    </h2>
+
+    <div class="products">
+
+
+        <!-- COFFEE SOAP -->
+
+        <div class="product">
+
+            <img
+                src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=600&q=80"
+                alt="Coffee Soap"
+            >
+
+            <h3>Coffee Soap</h3>
+
+            <p>
+                Refreshing coffee-inspired handmade soap.
+            </p>
+
+            <div class="price">
+                ₹150
+            </div>
+
+            <button
+                class="add-btn"
+                onclick="addToCart('Coffee Soap', 150)"
+            >
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <!-- MANJUSHA SOAP -->
+
+        <div class="product">
+
+            <img
+                src="https://images.unsplash.com/photo-1608181831718-c9d3f6b6a3f6?auto=format&fit=crop&w=600&q=80"
+                alt="Manjusha Soap"
+            >
+
+            <h3>Manjusha Soap</h3>
+
+            <p>
+                Gentle and refreshing soap for everyday use.
+            </p>
+
+            <div class="price">
+                ₹180
+            </div>
+
+            <button
+                class="add-btn"
+                onclick="addToCart('Manjusha Soap', 180)"
+            >
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <!-- MARIGOLD SOAP -->
+
+        <div class="product">
+
+            <img
+                src="https://images.unsplash.com/photo-1607006344380-b6775a0824d7?auto=format&fit=crop&w=600&q=80"
+                alt="Marigold Soap"
+            >
+
+            <h3>Marigold Soap</h3>
+
+            <p>
+                A refreshing marigold-inspired bathing soap.
+            </p>
+
+            <div class="price">
+                ₹200
+            </div>
+
+            <button
+                class="add-btn"
+                onclick="addToCart('Marigold Soap', 200)"
+            >
+                Add to Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CART -->
+
+<section class="cart-section">
+
+    <div class="cart">
+
+        <h2>🛒 Your Cart</h2>
+
+        <div id="cartItems">
+
+            <p style="text-align:center;color:#777;">
+                Your cart is empty.
+            </p>
+
+        </div>
+
+        <div class="total">
+            Total: ₹<span id="total">0</span>
+        </div>
+
+
+        <!-- CUSTOMER DETAILS -->
+
+        <div class="checkout">
+
+            <h3>
+                Customer Details
+            </h3>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Your Name"
+            >
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="Mobile Number"
+            >
+
+            <textarea
+                id="customerAddress"
+                placeholder="Delivery Address"
+            ></textarea>
+
+
+            <button
+                class="whatsapp-btn"
+                onclick="sendWhatsAppOrder()"
+            >
+                📱 Order on WhatsApp
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about">
+
+    <h2>
+        About Javeda Soaps
+    </h2>
+
+    <p>
+        Welcome to Javeda Soaps. We offer carefully selected
+        soaps designed to make your everyday bathing experience
+        fresh, pleasant and enjoyable.
+    </p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Javeda Soaps. All Rights Reserved.
+    </p>
+
+    <p style="margin-top:10px;">
+        📞 <a href="tel:9742709272">9742709272</a>
+    </p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+let cart = [];
+
+
+/* ADD PRODUCT */
+
+function addToCart(name, price) {
+
+    let existing = cart.find(item => item.name === name);
+
+    if (existing) {
+
+        existing.quantity++;
+
+    } else {
+
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+        });
+
+    }
+
+    displayCart();
+
+}
+
+
+/* DISPLAY CART */
+
+function displayCart() {
+
+    const cartItems =
+        document.getElementById("cartItems");
+
+    const totalElement =
+        document.getElementById("total");
+
+
+    if (cart.length === 0) {
+
+        cartItems.innerHTML =
+            '<p style="text-align:center;color:#777;">Your cart is empty.</p>';
+
+        totalElement.innerText = "0";
+
+        return;
+    }
+
+
+    cartItems.innerHTML = "";
+
+    let total = 0;
+
+
+    cart.forEach((item, index) => {
+
+        let itemTotal =
+            item.price * item.quantity;
+
+        total += itemTotal;
+
+
+        const div =
+            document.createElement("div");
+
+        div.className = "cart-item";
+
+
+        div.innerHTML = `
+
+            <div>
+
+                <strong>${item.name}</strong>
+
+                <br>
+
+                ₹${item.price} × ${item.quantity}
+
+            </div>
+
+
+            <div class="quantity">
+
+                <button
+                    onclick="decrease(${index})"
+                >
+                    −
+                </button>
+
+                <span>
+                    ${item.quantity}
+                </span>
+
+                <button
+                    onclick="increase(${index})"
+                >
+                    +
+                </button>
+
+            </div>
+
+
+            <div>
+
+                ₹${itemTotal}
+
+                <br>
+
+                <button
+                    class="remove-btn"
+                    onclick="removeItem(${index})"
+                >
+                    Remove
+                </button>
+
+            </div>
+
+        `;
+
+
+        cartItems.appendChild(div);
+
+    });
+
+
+    totalElement.innerText = total;
+
+}
+
+
+/* INCREASE */
+
+function increase(index) {
+
+    cart[index].quantity++;
+
+    displayCart();
+
+}
+
+
+/* DECREASE */
+
+function decrease(index) {
+
+    if (cart[index].quantity > 1) {
+
+        cart[index].quantity--;
+
+    } else {
+
+        cart.splice(index, 1);
+
+    }
+
+    displayCart();
+
+}
+
+
+/* REMOVE */
+
+function removeItem(index) {
+
+    cart.splice(index, 1);
+
+    displayCart();
+
+}
+
+
+/* WHATSAPP ORDER */
+
+function sendWhatsAppOrder() {
+
+    if (cart.length === 0) {
+
+        alert("Please add at least one soap to your cart.");
+
+        return;
+    }
+
+
+    const name =
+        document.getElementById("customerName").value.trim();
+
+    const phone =
+        document.getElementById("customerPhone").value.trim();
+
+    const address =
+        document.getElementById("customerAddress").value.trim();
+
+
+    if (name === "" ||
+        phone === "" ||
+        address === "") {
+
+        alert(
+            "Please enter your name, mobile number and delivery address."
+        );
+
+        return;
+    }
+
+
+    let message =
+        "🧼 *Javeda Soaps - New Order*%0A%0A";
+
+
+    message +=
+        "*Customer Details*%0A";
+
+    message +=
+        "Name: " + name + "%0A";
+
+    message +=
+        "Phone: " + phone + "%0A";
+
+    message +=
+        "Address: " + address + "%0A%0A";
+
+
+    message +=
+        "*Order Details*%0A";
+
+
+    let grandTotal = 0;
+
+
+    cart.forEach(item => {
+
+        let itemTotal =
+            item.price * item.quantity;
+
+        grandTotal += itemTotal;
+
+
+        message +=
+            "• " +
+            item.name +
+            " × " +
+            item.quantity +
+            " = ₹" +
+            itemTotal +
+            "%0A";
+
+    });
+
+
+    message +=
+        "%0A*Total: ₹" +
+        grandTotal +
+        "*";
+
+
+    const whatsappNumber =
+        "919742709272";
+
+
+    const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        message;
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
